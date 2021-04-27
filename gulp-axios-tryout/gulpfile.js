@@ -1,11 +1,22 @@
 const gulp = require("gulp");
 const axios = require("axios");
 
+const JIRA_BASIC_AUTH = process.env.JIRA_BASIC_AUTH;
+
+const headers = {
+  "Content-Type": "application/json",
+  Authorization: `Basic ${JIRA_BASIC_AUTH}`,
+};
+
 gulp.task("hostname", (done) => {
   axios
-    .post("https://httpbin.org/post", {
-      todo: "Buy the milk",
-    })
+    .post(
+      "https://lynked.atlassian.net/rest/api/2/issue/MENY-212/comment",
+      {
+        body: "hello gulp",
+      },
+      { headers: headers }
+    )
     .then((res) => {
       console.log(`statusCode:`, res.status);
       console.log(res.data.json);

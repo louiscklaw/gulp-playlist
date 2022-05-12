@@ -5,12 +5,15 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gitUpdate": "git add . && git commit -m'update gulp-run-command,' && git pull && git push"
+    "gitUpdate": "git add . && git commit -m\"update gulp-run-command,\" && git pull && git push"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "gulp-run-command": "^0.0.10"
   }
 }
